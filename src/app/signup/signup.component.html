@@ -2,8 +2,10 @@
 <div class="box">
   <form class="modal-content" action="/action_page.php">
     <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+      <div class="text-allign">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+      </div>
       <hr>
       <label for="email"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" [formControl]="name" required>
@@ -14,11 +16,17 @@
       <label for="psw-repeat"><b>Confirm Password</b></label>
       <input type="password" placeholder="Repeat Password" [formControl]="repsw" required>
       
-
-      <div class="clearfix">
-        <button type="button" class="cancelbtn" routerLink = ''>Cancel</button>
-        <button type="button" class="signupbtn" (click)="submit()">Sign Up</button>
+      <div class="text-allign">
+        <button (click)="submit()" type="button">Sign Up</button>
+        already have an account?
+        <p class='login'routerLink="/login">
+          login
+        </p>
       </div>
+      <!-- <div class="clearfix"> -->
+        <!-- <button type="button" class="cancelbtn" routerLink = ''>Cancel</button> -->
+        <!-- <button type="button" class="signupbtn" (click)="submit()">Sign Up</button> -->
+      <!-- </div> -->
     </div>
   </form>
 </div>

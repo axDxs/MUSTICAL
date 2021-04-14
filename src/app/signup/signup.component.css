@@ -2,7 +2,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 h1,p{
-  color: rgb(84, 84, 204);
+  color: rgb(0, 0, 0);
 }
 
 h1{
@@ -17,7 +17,7 @@ h1{
 
 label{
   font-size: large;
-  color: rgb(71, 71, 209);
+  color: rgb(0, 0, 0);
 }
 
 .box{
@@ -28,7 +28,7 @@ label{
   /* margin-top: 20%; */
   border-style: solid;
   border-radius: 10px;
-  border-color: rgb(84, 84, 204);
+  border-color: rgb(0, 0, 0);
   vertical-align: middle;
   padding: 10px;
 }
@@ -51,8 +51,8 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for all buttons */
 button {
-  background-color: rgb(84, 84, 204);
-  border-color: rgb(84, 84, 204);
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
   border-style: solid;
   color: white;
   padding: 14px 20px;
@@ -71,8 +71,8 @@ button:hover {
 .cancelbtn {
   padding: 11.5px 20px;
   background-color: white;
-  color: rgb(84, 84, 204);
-  border-color: rgb(84, 84, 204);
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
   border-style: solid;
 }
 
@@ -86,4 +86,10 @@ button:hover {
 .container {
   padding: 16px;
 }
-
+.text-allign{
+  text-align: center;
+}
+.login{
+  color: rgb(49, 88, 194);
+  display: inline-block;
+}
