@@ -4,13 +4,15 @@ import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
-
+import { ListComponent } from './list/list.component';
+ 
 // const routes: Routes = [];
 const routes: Routes = [
   // {path : 'card', component : VideoCardComponent},
   {path : 'signup', component : SignupComponent},
   {path : '', component : LoginComponent},
-  {path : 'login', component : HomeComponent}
+  {path : 'home', component : HomeComponent},
+  {path : 'list', component : ListComponent}
 ];
 
 @NgModule({

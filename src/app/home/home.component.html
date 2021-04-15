@@ -1,76 +1,86 @@
 <div class="title">
     <h1>Welcome, How are you feeling today?</h1>
 </div>
-
+<div class="background">
 <div class="rowindentation">
- <div class="row">  
-     <!-- <div class="column"> -->
-     <div class="container">
-        <img src="../../assets/happy.png" class="image">
-        <div class="middle">
-            <div class="text">
-                happy
+    <div class="row">
+        <!-- <div class="column"> -->
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb1()" />
+            <img src="../../assets/happy.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    happy
+                </div>
             </div>
         </div>
-     </div>
-     <div class="container">
-        <img src="../../assets/sad.png" class="image">
-        <div class="middle">
-            <div class="text">
-                sad
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb2()" />
+            <img src="../../assets/sad.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    sad
+                </div>
             </div>
         </div>
-     </div>
-     <div class="container">
-        <img src="../../assets/angry.png" class="image">
-        <div class="middle">
-            <div class="text">
-                angry
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb3()" />
+            <img src="../../assets/angry.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    angry
+                </div>
             </div>
         </div>
-     </div>
-     <div class="container">
-        <img src="../../assets/flirty.png" class="image">
-        <div class="middle">
-            <div class="text">
-                flirty
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb4()" />
+            <img src="../../assets/flirty.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    flirty
+                </div>
             </div>
         </div>
-     </div>
-    <!-- </div>     -->
- </div>
-    
-     
-     <br>
-     
- <div class="row">
-     <div class="container">
-        <img src="../../assets/inlove.png" class="image">
-        <div class="middle">
-            <div class="text">
-                In love
+        <!-- </div>     -->
+    </div>
+
+
+    <br>
+
+    <div class="row row2">
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb5()" />
+            <img src="../../assets/inlove.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    In love
+                </div>
             </div>
         </div>
-     </div>
-     <div class="container">
-        <img src="../../assets/cranky.png" class="image">
-        <div class="middle">
-            <div class="text">
-                cranky
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb6()" />
+            <img src="../../assets/cranky.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    cranky
+                </div>
             </div>
         </div>
-     </div>
-     <div class="container">
-        <img src="../../assets/sleepy.png" class="image">
-        <div class="middle">
-            <div class="text">
-                sleepy
+        <div class="container">
+            <input type="checkbox" class="checkbox" (change)="cb7()" />
+            <img src="../../assets/sleepy.png" class="image">
+            <div class="middle">
+                <div class="text">
+                    sleepy
+                </div>
             </div>
         </div>
-     </div>
-</div>
+    </div>
 </div>
 
-<div class="homepageimage">
-    <img src="../../assets/homepage.svg" class="homeimage">
+<div class="homepageimage"> 
+    <img src="../../assets/side.svg" class="homeimage">
+</div>
+
+<button (click)="submit()" type="button">Let's Go</button>
 </div>

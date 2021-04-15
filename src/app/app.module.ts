@@ -9,7 +9,10 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component' //for forms 
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListComponent } from './list/list.component' //for forms 
+import { DataTransferServiceService } from './data-transfer-service.service';
 
 
 @NgModule({
@@ -20,15 +23,17 @@ import { FooterComponent } from './footer/footer.component' //for forms
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    ListComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DataTransferServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
