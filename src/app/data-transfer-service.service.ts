@@ -9,7 +9,7 @@ export class DataTransferServiceService {
   arr: any;
 
   private data = new BehaviorSubject<Array<string>>([])
-  currentMessage = this.data.asObservable();
+  // currentMessage = this.data.asObservable();
 
   getList(message:any){
     this.arr = message;

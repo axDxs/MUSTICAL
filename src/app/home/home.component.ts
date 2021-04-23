@@ -91,32 +91,32 @@ export class HomeComponent implements OnInit {
 
   submit(){
     if(this.happy == true){
-      this.message.push("you feel Happy")
+      this.message.push("happy")
       // console.log(this.message)
       console.log("You feel Happy")
     }
     if(this.sad == true){
-      this.message.push("you feel Sad")
+      this.message.push("sad")
       console.log("You feel Sad")
     }
     if(this.angry == true){
-      this.message.push("you feel Angry")
+      this.message.push("angry")
       console.log("You feel Angry")
     }
     if(this.flirty == true){
-      this.message.push("you feel Flirty")
+      this.message.push("flirty")
       console.log("You feel Flirty")
     }
     if(this.inlove == true){
-      this.message.push("you feel Romantic")
+      this.message.push("inlove")
       console.log("You feel Romantic")
     }
     if(this.sleepy == true){
-      this.message.push("you feel Sleepy")
+      this.message.push("sleepy")
       console.log("You feel Sleepy")
     }
     if(this.cranky == true){
-      this.message.push("you feel Cranky")
+      this.message.push("cranky")
       console.log("You feel Cranky")
     }
     console.log(this.message)
