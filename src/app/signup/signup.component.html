@@ -1,12 +1,13 @@
 
+<body class="bodybackground">
 <div class="box">
   <form class="modal-content" action="/action_page.php">
     <div class="container">
       <div class="text-allign">
-        <h1>Sign Up</h1>
-        <p>Please fill in this form to create an account.</p>
+        <h1 style="font-weight: 500;">Sign Up</h1> 
+        <p style="font-style: oblique;">Create account to start listening to songs</p>
       </div>
-      <hr>
+
       <label for="email"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" [formControl]="name" required>
 
@@ -14,7 +15,7 @@
       <input type="password" placeholder="Enter Password" [formControl]="psw" required>
 
       <label for="psw-repeat"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Repeat Password" [formControl]="repsw" required>
+      <input type="password" placeholder="Confirm Password" [formControl]="repsw" required>
       
       <div class="text-allign">
         <button (click)="submit()" type="button">Sign Up</button>
@@ -31,3 +32,4 @@
   </form>
 </div>
 <img src="../../assets/login.svg" class="image">
+</body>
