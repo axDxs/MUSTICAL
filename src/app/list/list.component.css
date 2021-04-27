@@ -13,6 +13,7 @@ body {
   /* top: 50%;
   left: 50%; */
   /* transform: translate(-50%, -50%); */
+  
    vertical-align: center; 
   display: inline-block;
   width: 500px;
@@ -108,22 +109,22 @@ main .player .fa.fa-play {
   text-align: center;
   background: linear-gradient(0deg, #111, #222);
 }
-main .player .fa.fa-repeat {
+main .player .fa.fa-pause {
   top: 8%;
   left: 50%;
   transform: translateX(-50%);
 }
-main .player .fa.fa-fast-backward {
+main .player .fa.fa-previous{
   top: 50%;
   left: 8%;
   transform: translateY(-50%);
 }
-main .player .fa.fa-fast-forward {
+main .player .fa.fa-next{
   top: 50%;
   left: 82%;
   transform: translateY(-50%);
 }
-main .player .fa.fa-random {
+main .player .fa.fa-stop {
   top: 82%;
   left: 50%;
   transform: translateX(-50%);
