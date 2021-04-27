@@ -15,31 +15,30 @@
         <img src="../../assets/am.jpg" alt="" />
       </div>
       <div class="player">
-        <i class="fa fa-repeat"> 
-          <p>repeat</p> 
-          <!-- <button>repeat</button> -->
+        <i class="fa fa-pause"> 
+          <button class="mediabutton" (click)="pause()">pause</button>
         </i>
-        <i class="fa fa-fast-backward">
-          <!-- <p>previous</p> -->
+        <i class="fa fa-previous">
+           <button class="mediabutton" (click)="previous()">❮||</button>
         </i>
         <i class="fa fa-play">
           <!-- <p>play</p> -->
-          <button class="mediabutton" (click)="play()">List</button>
+          <button class="mediabutton" (click)="play()">Play</button>
         </i>
-        <i class="fa fa-fast-forward">
-          <!-- <p>next</p> -->
+        <i class="fa fa-next">
+          <button class="mediabutton" (click)="next()">||❯</button>
         </i>
-        <i class="fa fa-random">
-          <p>shuffle</p>
+        <i class="fa fa-stop">
+          <button class="mediabutton" (click)="stop()">stop</button>
         </i>
       </div>
     </main>
     <footer>
        <!-- <div class="title"> -->
-         <div class="title" *ngFor="let oneData of finaldata">
+         <!-- <div class="title" *ngFor="let oneData of finaldata">
            <span>{{oneData.songname}}</span>
-           <!-- <span class="tagspan">{{oneData.tag}}</span> -->
-          </div>
+            <span class="tagspan">{{oneData.tag}}</span> 
+          </div> -->
       <!-- </div> --> 
       <div class="time-tracker">
         <div class="timer">
@@ -54,8 +53,9 @@
   <div class="songbox">
     <div style="text-align: center;">Playlist</div>
     <hr>
-    <div class="songlist" *ngFor="let file of files" (click)="openfile(file.url)">{{file.name}}
-
+     <!-- <div class="songlist" *ngFor="let file of files" (click)="openfile(file.url)">{{file.name}}  -->
+      <div class="songlist" *ngFor="let oneData of finaldata">
+        <span>{{oneData.songname}}</span>
+       </div>
     </div> 
-  </div>
 </body>

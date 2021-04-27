@@ -25,10 +25,32 @@ export class ListComponent implements OnInit {
     console.log(url);
     
   }
+
+  pause()
+  {
+    console.log('clicked pause button')
+  }
+
+  previous(){
+    console.log('clicked previous button')
+  }
+
   play(){
     console.log('Clicked Play button');
     
   }
+
+
+  next(){
+    console.log('clicked next button')
+  }
+
+
+  stop(){
+    console.log('clicked stop button')
+  }
+
+  
   message: any=[]
   finaldata: any
   constructor(private data: DataTransferServiceService, private http: HttpClient) { }
