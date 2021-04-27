@@ -8,7 +8,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  audioObj =new Audio();
+  
+  files=[
+    {
+    url :"./assets/songs/song1/mp3",
+    name :'Heart of life'
+   },
+   {
+     url :"./assets/songs/song2/mp3",
+     name :"New Light"
+   }
 
+  ];
+  openfile(url: any){
+    console.log(url);
+    
+  }
+  play(){
+    console.log('Clicked Play button');
+    
+  }
   message: any=[]
   finaldata: any
   constructor(private data: DataTransferServiceService, private http: HttpClient) { }
