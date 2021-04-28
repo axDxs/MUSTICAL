@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTransferServiceService } from '../data-transfer-service.service'
 import { HttpClient } from '@angular/common/http';
-import { ControlContainer } from '@angular/forms';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-list',
@@ -11,17 +11,21 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
   audioObj =new Audio();
-  // audioEvents=[
-  //   "ended",
-  //   "error",
-  //   "play",
-  //   "playing",
-  //   "pause",
-  //   "timupdate",
-  //   "canplay",
-  //   "loadmetadata",
-  //   "loadstart"
-  // ]
+  audioEvents=[
+    "ended",
+    "error",
+    "play",
+    "playing",
+    "pause",
+    "timupdate",
+    "canplay",
+    "loadmetadata",
+    "loadstart"
+  ];
+  currentTime = "00:00:00";
+  duration = "00:00:00";
+  durationnum = 0;
+  seek = 0;
   
   index:any=0
   message: any=[]
@@ -58,55 +62,59 @@ export class ListComponent implements OnInit {
     })
   }
 
-  // streamObserver(url:any){
-  //   return new Observable(observer => {
+  openfile(url: any){
+    this.streamObserver(url).subscribe(event => {});
+    console.log(url);
+  }
 
-  //     this.audioObj.src = url;
-  //     this.audioObj.load();
-  //     this.audioObj.play();
+  streamObserver(url:any){
+    return new Observable(observer => {
 
-  //     const handler = (event:Event) =>{
-  //       console.log(event) ;
+      this.audioObj.src = url;
+      this.audioObj.load();
+      this.audioObj.play();
+      
 
-  //     }
-  //     this.addEvent(this.audioObj,this.audioEvents,handler)
+      const handler = (event:Event) =>{
+        console.log(event) ;
+        this.seek = this.audioObj.currentTime;
+        this.durationnum = this.audioObj.duration;
+        this.duration = this.timeFormat(this.audioObj.duration);
+        this.currentTime = this.timeFormat(this.audioObj.currentTime);
+      }
+      this.addEvent(this.audioObj,this.audioEvents,handler)
 
       
-  //     return() =>{
-  //       this.audioObj.pause();
-  //       this.audioObj.currentTime=0;
-  //     }
-  //   })
+      return() =>{
+        this.audioObj.pause();
+        this.audioObj.currentTime=0;
 
-  // }
-  //  addEvent(obj,events,handler){
+        this.removeEvent(this.audioObj, this.audioEvents, handler);
+      }
+    })
 
-  //   events.forEach(event => {
-  //     obj.addEventListener(event,handler);
-  //   });
-  //  }
-  // removeEvent(obj,events,handler){
-     
-  // }
-  // files=[
-  //   {
-  //   url :"./assets/songs/song1/mp3",
-  //   name :'Heart of life'
-  //  },
-  //  {
-  //    url :"./assets/songs/song2/mp3",
-  //    name :"New Light"
-  //  }
+  }
 
-  // ];
-  openfile(url: any){
-     this.audioObj.src=url;
-     this.audioObj.load();
-     this.audioObj.play();
-    //  this.streamObserver(url).subscribe(event => {});
+  setSeekTo(ev:any){
+    this.audioObj.currentTime = ev.target.value;
+  }
 
-    console.log(url);
-    
+  addEvent(obj:any,events:any,handler:any){
+    events.forEach((event:any) => {
+      obj.addEventListener(event,handler);
+    });
+   }
+
+  
+  removeEvent(obj:any,events:any,handler:any){
+     events.forEach((event:any) => {
+       obj.removeEventListener(event, handler);
+     });
+  }
+
+  setVolume(ev:any){
+    this.audioObj.volume = ev.target.value;
+    console.log(ev.target.value)
   }
 
   pause()
@@ -117,32 +125,19 @@ export class ListComponent implements OnInit {
 
   previous()
   {
-    if (this.index == 0)
-    {
-      this.index=this.finaldata.size()
-    }
     this.openfile(this.finaldata[--this.index].url)
-    console.log('clicked previous button')
-
   }
 
   play()
   {
-
     this.audioObj.play();
     console.log('Clicked Play button');
-    
   }
 
 
   next()
   {
     this.openfile(this.finaldata[++this.index].url)
-    // this.audioObj.pause(); 
-    // this.finaldata[++this.index]
-    // console.log('clicked next button',this.finaldata[this.index])
-    // this.audioObj.play();
-    // console.log(this.finaldata[0])
   }
 
 
@@ -152,5 +147,10 @@ export class ListComponent implements OnInit {
     this.audioObj.currentTime = 0;
     console.log('clicked stop button')
   } 
+
+  timeFormat(time:any, format="HH:mm:ss"){
+    const momentTime = time*1000;
+    return moment.utc(momentTime).format(format);
+  }
 
 }
