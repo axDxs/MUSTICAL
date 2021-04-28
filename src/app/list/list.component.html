@@ -39,11 +39,17 @@
            <span>{{oneData.songname}}</span>
             <span class="tagspan">{{oneData.tag}}</span> 
           </div> -->
-      <!-- </div> --> 
+      <!-- </div> -->
+      <!-- <div class="time-tracker"> -->
+        <!-- <div class="timer">
+        <span class="bg">Current time</span>
+        <input type="range" min="0" max="" value="0.00">
+        <span>Duration</span>
+      </div> -->
+    <!-- </div> -->
       <div class="time-tracker">
         <div class="timer">
           <div class="bg">
-
           </div>
         </div>
         <div class="time">04:20</div>
@@ -54,7 +60,7 @@
     <div style="text-align: center;">Playlist</div>
     <hr>
      <!-- <div class="songlist" *ngFor="let file of files" (click)="openfile(file.url)">{{file.name}}  -->
-      <div class="songlist" *ngFor="let oneData of finaldata">
+      <div class="songlist" *ngFor="let oneData of finaldata" (click)="openfile(oneData.url)">
         <span>{{oneData.songname}}</span>
        </div>
     </div> 
