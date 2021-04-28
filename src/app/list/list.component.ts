@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTransferServiceService } from '../data-transfer-service.service'
 import { HttpClient } from '@angular/common/http';
+import { ControlContainer } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -9,48 +11,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
   audioObj =new Audio();
+  // audioEvents=[
+  //   "ended",
+  //   "error",
+  //   "play",
+  //   "playing",
+  //   "pause",
+  //   "timupdate",
+  //   "canplay",
+  //   "loadmetadata",
+  //   "loadstart"
+  // ]
   
-  files=[
-    {
-    url :"./assets/songs/song1/mp3",
-    name :'Heart of life'
-   },
-   {
-     url :"./assets/songs/song2/mp3",
-     name :"New Light"
-   }
-
-  ];
-  openfile(url: any){
-    console.log(url);
-    
-  }
-
-  pause()
-  {
-    console.log('clicked pause button')
-  }
-
-  previous(){
-    console.log('clicked previous button')
-  }
-
-  play(){
-    console.log('Clicked Play button');
-    
-  }
-
-
-  next(){
-    console.log('clicked next button')
-  }
-
-
-  stop(){
-    console.log('clicked stop button')
-  }
-
-  
+  index:any=0
   message: any=[]
   finaldata: any
   constructor(private data: DataTransferServiceService, private http: HttpClient) { }
@@ -85,5 +58,99 @@ export class ListComponent implements OnInit {
     })
   }
 
+  // streamObserver(url:any){
+  //   return new Observable(observer => {
+
+  //     this.audioObj.src = url;
+  //     this.audioObj.load();
+  //     this.audioObj.play();
+
+  //     const handler = (event:Event) =>{
+  //       console.log(event) ;
+
+  //     }
+  //     this.addEvent(this.audioObj,this.audioEvents,handler)
+
+      
+  //     return() =>{
+  //       this.audioObj.pause();
+  //       this.audioObj.currentTime=0;
+  //     }
+  //   })
+
+  // }
+  //  addEvent(obj,events,handler){
+
+  //   events.forEach(event => {
+  //     obj.addEventListener(event,handler);
+  //   });
+  //  }
+  // removeEvent(obj,events,handler){
+     
+  // }
+  // files=[
+  //   {
+  //   url :"./assets/songs/song1/mp3",
+  //   name :'Heart of life'
+  //  },
+  //  {
+  //    url :"./assets/songs/song2/mp3",
+  //    name :"New Light"
+  //  }
+
+  // ];
+  openfile(url: any){
+     this.audioObj.src=url;
+     this.audioObj.load();
+     this.audioObj.play();
+    //  this.streamObserver(url).subscribe(event => {});
+
+    console.log(url);
+    
+  }
+
+  pause()
+  {
+    this.audioObj.pause()
+    console.log('clicked pause button')
+  }
+
+  previous()
+  {
+    if (this.index == 0)
+    {
+      this.index=this.finaldata.size()
+    }
+    this.openfile(this.finaldata[--this.index].url)
+    console.log('clicked previous button')
+
+  }
+
+  play()
+  {
+
+    this.audioObj.play();
+    console.log('Clicked Play button');
+    
+  }
+
+
+  next()
+  {
+    this.openfile(this.finaldata[++this.index].url)
+    // this.audioObj.pause(); 
+    // this.finaldata[++this.index]
+    // console.log('clicked next button',this.finaldata[this.index])
+    // this.audioObj.play();
+    // console.log(this.finaldata[0])
+  }
+
+
+  stop()
+  {
+    this.audioObj.pause();
+    this.audioObj.currentTime = 0;
+    console.log('clicked stop button')
+  } 
 
 }
