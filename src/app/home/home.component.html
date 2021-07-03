@@ -1,100 +1,82 @@
-<body class="bodybackground">
-<div class="title">
-    <h1>Welcome, How are you feeling today?</h1>
-</div>
-<div class="background">
-<div class="rowindentation">
-    <div class="row">
-        <!-- <div class="column"> -->
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb1()" />
-            <img src="../../assets/happy.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    happy
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb2()" />
-            <img src="../../assets/sad.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    sad
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb3()" />
-            <img src="../../assets/angry.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    angry
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb4()" />
-            <img src="../../assets/flirty.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    flirty
-                </div>
-            </div>
-        </div>
-        <!-- </div>     -->
-    </div>
+<mat-toolbar class="navbar">
+  <div>MUSTICAL</div>
+  <div class=navbaroptions>
+    
+    <!-- profile button  -->
+    <mat-menu #profilemenu="matMenu">
+        <button mat-menu-item>Profile</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="profilemenu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    
+    <!-- setting options -->
+    <mat-menu #settingmenu="matMenu">
+        <button mat-menu-item>Change theme</button>
+        <button mat-menu-item>Report an issue!</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="settingmenu">
+        <mat-icon>settings</mat-icon>
+    </button>
+     
+    <!-- logout button  -->
+    <mat-menu #logoutmenu="matMenu">
+        <button mat-menu-item routerLink="/signup">Logout</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="logoutmenu" color = "accent">
+        <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
 
 
-    <br>
+<!-- <div>
+    <mat-nav-list>
 
-    <div class="row row2">
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb5()" />
-            <img src="../../assets/inlove.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    In love
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb6()" />
-            <img src="../../assets/cranky.png" class="image">
-            <div class="middle">
-                <div class="text">
-                    cranky
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="checkbox" (change)="cb7()" />
-            <img src="../../assets/sleepy.png" class="image" alt="submit">
-            <div class="middle">
-                <div class="text">
-                    sleepy
-                </div>
-            </div>
-        </div>
-        <!-- <div class="container">
-        <form  action="submit()">
-            <input type="image"/>
-            <img src="../../assets/sleepy.png" class="image" type ="image" />
+    <mat-list-item>
+        <mat-icon matListIcon>radio</mat-icon>
+        <h3 matLine>Listen to Music</h3>
+        <p matLine>play songs which suit your current mood</p>
+    </mat-list-item>
 
-            <div class="middle">
-                <div class="text">
-                    sleepy
-                </div>
-            </div>
-        </form>
-    </div> -->
-    </div>
-</div>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon matListIcon>upload_file</mat-icon>
+        <h3 matLine>Upload Song</h3>
+        <p matLine>help others discover your talent</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon matListIcon>history</mat-icon>
+        <h3 matLine>Revisit Songs</h3>
+        <p matLine>Liked what you heard? Visit those songs again</p>
+    </mat-list-item>
+</mat-nav-list>
+</div> -->
 
-<div class="homepageimage"> 
-    <img src="../../assets/side.svg" class="homeimage">
-</div>
+<mat-grid-list cols = "2" rowHeight = "2:1" gutterSize="10px">
+    <mat-grid-tile colspan = "2">
+        <mat-list-item>
+            <mat-icon matListIcon>radio</mat-icon>
+            <h3 matLine>Listen to Music</h3>
+            <p matLine>play songs which suit your current mood</p>
+        </mat-list-item>
+    
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-list-item>
+            <mat-icon matListIcon>upload_file</mat-icon>
+            <h3 matLine>Upload Song</h3>
+            <p matLine>help others discover your talent</p> 
+        </mat-list-item>
+    </mat-grid-tile>
 
-<button (click)="submit()" type="button">Let's Go</button>
-</div>
-</body>
+    <mat-grid-tile>
+        <mat-list-item>
+            <mat-icon matListIcon>history</mat-icon>
+            <h3 matLine>Revisit Songs</h3>
+            <p matLine>Liked what you heard? Visit those songs again</p>
+        </mat-list-item>
+    </mat-grid-tile>
+
+</mat-grid-list>

@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponent } from './list/list.component' //for forms 
 import { DataTransferServiceService } from './data-transfer-service.service';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DataTransferServiceService } from './data-transfer-service.service';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [DataTransferServiceService],
   bootstrap: [AppComponent]

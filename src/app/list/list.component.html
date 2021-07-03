@@ -1,15 +1,14 @@
+
 <body class="backgroundcolour">
-
-
   <div class="container">
-    <header>
+    <!-- <header>
       <div class="playlist">
         <i class="fa fa-bars"></i>
       </div>
       <div class="setting">
         <i class="fa fa-cog"></i>
       </div>
-    </header>
+    </header> -->
     <main>
       <div class="album-art">
         <img src="../../assets/am.jpg" alt="" />
@@ -22,7 +21,6 @@
           <button class="mediabutton" (click)="previous()">❮||</button>
         </i>
         <i class="fa fa-play">
-          <!-- <p>play</p> -->
           <button class="mediabutton" (click)="play()">Play</button>
         </i>
         <i class="fa fa-next">
@@ -34,12 +32,7 @@
       </div>
     </main>
     <footer>
-      <!-- <div class="title"> -->
-      <!-- <div class="title" *ngFor="let oneData of finaldata">
-           <span>{{oneData.songname}}</span>
-            <span class="tagspan">{{oneData.tag}}</span> 
-          </div> -->
-      <!-- </div> -->
+     
       <div class="time-tracker">
         <div class="timer">
           <span class="bg">{{currentTime}}</span>

@@ -22,8 +22,8 @@ export class ListComponent implements OnInit {
     "loadmetadata",
     "loadstart"
   ];
-  currentTime = "00:00:00";
-  duration = "00:00:00";
+  currentTime = "00:00";
+  duration = "00:00";
   durationnum = 0;
   seek = 0;
   
@@ -148,7 +148,7 @@ export class ListComponent implements OnInit {
     console.log('clicked stop button')
   } 
 
-  timeFormat(time:any, format="HH:mm:ss"){
+  timeFormat(time:any, format="mm:ss"){
     const momentTime = time*1000;
     return moment.utc(momentTime).format(format);
   }

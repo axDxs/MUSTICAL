@@ -1,7 +1,8 @@
 .backgroundcolour{
   padding-top: 170px; 
   padding-left: 120px; 
-  background: linear-gradient(180deg, slategrey,black);
+  /* background: linear-gradient(180deg, slategrey,black);*/
+  background: whitesmoke;
 }
 body {
   height: 100vh;
@@ -148,6 +149,7 @@ footer .time-tracker {
   box-sizing: border-box;
 }
 footer .time-tracker .timer {
+  text-align: center;
   position: relative;
   float: left;
   width: 90%;
